@@ -1,20 +1,16 @@
-# Gunakan Node.js base image
-FROM node:18
+# Menggunakan base image Python
+FROM python:3.10
 
-# Set working directory
-WORKDIR /usr/src/app
+# Menyalin semua file ke dalam container
+COPY . /app
+WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Menginstal dependency
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies
-RUN npm install
-
-# Copy application source code
-COPY . .
-
-# Expose port aplikasi
+# Expose port 8080 for Cloud Run
 EXPOSE 8080
 
-# Start the application
-CMD [ "node", "server.js" ]
+# Menjalankan aplikasi
+CMD ["python", "api.py"]

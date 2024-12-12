@@ -1,0 +1,15 @@
+**diketik di terminal sebelum memanggil hasil
+venv\Scripts\activate
+
+**diketik di terminal untuk memanggil hasil
+uvicorn main:app --reload
+
+**digunakan kalau ada import yang error lagi
+pip install keras_tuner==1.4.7
+pip install matplotlib==3.9.3
+pip install numpy==2.1.3
+pip install pandas==2.2.3
+pip install scikit_learn==1.5.2
+pip install statsmodels==0.14.2
+pip install tensorflow==2.16.1
+pip install tensorflow_intel==2.16.1
